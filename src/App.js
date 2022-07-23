@@ -1,25 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+// import Counter from "./components/Counter"
 
-function App() {
+import Product from "./components/Product"
+import Header from "./components/Header"
+import { useState } from "react"
+
+function App(){
+  const [selectedCategory, setSelectedCategory] = useState(null)
+  console.log("I am in app",selectedCategory)
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Header setSelectedCategory={setSelectedCategory}></Header>
+      <Product selectedCategory = {selectedCategory}></Product>
     </div>
-  );
+  )
 }
 
-export default App;
+// function App(){
+//   console.log("App rendered");
+//   return (
+    
+    
+//     <div>
+//       <h1> My Counter App</h1>
+//       <Counter></Counter>
+//     </div>
+//   )
+// }
+
+export default App
