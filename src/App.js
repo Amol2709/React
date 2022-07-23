@@ -2,16 +2,18 @@
 
 import Product from "./components/Product"
 import Header from "./components/Header"
-import { useState } from "react"
+import CategoryProvider from "./context/CategoryContext"
 
 function App(){
-  const [selectedCategory, setSelectedCategory] = useState(null)
-  console.log("I am in app",selectedCategory)
+
   return (
-    <div>
-      <Header setSelectedCategory={setSelectedCategory}></Header>
-      <Product selectedCategory = {selectedCategory}></Product>
+    <CategoryProvider>
+      <div>
+      <Header ></Header>
+      <Product></Product>
     </div>
+    </CategoryProvider>
+    
   )
 }
 

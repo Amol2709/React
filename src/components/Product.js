@@ -1,7 +1,9 @@
 import React from "react";
 import useApi from "../hooks/useApi";
+import {useCategoryContext} from "../context/CategoryContext"
 
-function Product({selectedCategory}){
+function Product(){
+    const {selectedCategory} = useCategoryContext()
     console.log("I am in product",selectedCategory)
     const {data} = useApi(`https://fakestoreapi.com/products/category/${selectedCategory}`)
     console.log(data)
